@@ -3,7 +3,7 @@ def parse_input(user_input):
     cmd = cmd.strip().lower()
     return cmd, args
 
-# Декоратор для обробки помилки ValueError
+#Howmework#2
 def input_error(func):
     def inner(*args, **kwargs):
         try:
@@ -12,7 +12,7 @@ def input_error(func):
             return "Give me name and phone please."
     return inner
 
-# Декоратор для обробки помилки KeyError
+#Howmework#2
 def key_error_handler(func):
     def inner(*args, **kwargs):
         try:
@@ -27,11 +27,13 @@ def hello():
 
 # Для додавання нового контакту
 @input_error
+#Howmework#2
 def add_contact(contacts, name, phone):
     contacts[name] = phone
     return "Contact added."
 
 # Для зміни номера телефону у вже існуючого контакту
+#Howmework#2
 @key_error_handler
 @input_error
 def change_contact(contacts, name, new_phone):
@@ -39,6 +41,7 @@ def change_contact(contacts, name, new_phone):
     return "Contact updated."
 
 # Для виведення номера телефону за ім'ям
+#Howmework#2
 @key_error_handler
 def show_phone(contacts, name):
     return contacts[name]
